@@ -1,0 +1,14 @@
+plugins {
+  id "net.ltgt.apt" version "0.5"
+}
+
+apply plugin: 'java'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+  compile 'com.google.dagger:dagger:2.8'
+  apt 'com.google.dagger:dagger-compiler:2.8'
+}
