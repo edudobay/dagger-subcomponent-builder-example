@@ -1,14 +1,23 @@
 plugins {
   id "net.ltgt.apt" version "0.5"
+  id 'com.github.johnrengelman.shadow' version '1.2.4'
 }
 
 apply plugin: 'java'
+
+jar {
+  manifest {
+    attributes 'Main-Class': 'Main'
+  }
+}
 
 repositories {
     jcenter()
 }
 
+def daggerVersion = '2.9'
+
 dependencies {
-  compile 'com.google.dagger:dagger:2.8'
-  apt 'com.google.dagger:dagger-compiler:2.8'
+  compile "com.google.dagger:dagger:$daggerVersion"
+  apt "com.google.dagger:dagger-compiler:$daggerVersion"
 }
